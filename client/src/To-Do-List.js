@@ -14,7 +14,7 @@ class ToDoList extends Component{
         };
     }
 
-    ComponentDidMount(){
+    componentDidMount(){
         this.getTask();
     }
 ellow

@@ -58,7 +58,9 @@ func GetAllTasks(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateTask(w http.ResponseWriter, r *http.Request) {
-
+	w.Header().Set("Context-Type", "application/x-www-form-urlencoded")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "POST")
 }
 
 //https://www.youtube.com/watch?v=zXEOpgaXUDw&list=PL5dTjWUk_cPZKL-WgEXbD4l5YAjdGHfpt&index=7
