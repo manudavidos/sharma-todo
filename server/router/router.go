@@ -1,14 +1,14 @@
 package router
 
 import (
-	"sharma-todo/middleware"
+	"github.com/manudavidos/sharma-todo/middleware"
 
 	"github.com/gorilla/mux"
 )
 
 func Router() *mux.Router {
 
-	const apiPath string = "api/tasks"
+	const apiPath string = "/api/tasks"
 
 	router := mux.NewRouter()
 	router.HandleFunc(apiPath, middleware.GetAllTasks).Methods("GET", "OPTIONS")
