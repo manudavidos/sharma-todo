@@ -66,24 +66,28 @@ class ToDoList extends Component{
                                 </Card.Content>
 
                                 <Card.Meta textAlign="right">
+                                {!item.status && (
+                                    <>
                                     <Icon
                                     name="check circle"
                                     color="blue"
                                     onClick={() => this.updateTask(item._id)}
                                     />
-                                    <span onClick={() => this.updateTask(item._id)} style={{paddingRight: 10}}>Done</span>
-                                    <Icon
+                                    <span onClick={() => this.updateTask(item._id)} style={{paddingRight: 10, cursor: "pointer"}}>Done</span>
+                                    </>)}
+                                    {item.status && (
+                                    <><Icon
                                     name="undo"
                                     color="yellow"
                                     onClick={() => this.undoTask(item._id)}
                                     />
-                                    <span onClick={() => this.undoTask(item._id)} style={{paddingRight: 10}}>Undo</span>
-                                    <Icon
+                                    <span onClick={() => this.undoTask(item._id)} style={{paddingRight: 10, cursor: "pointer"}}>Undo</span>
+                                    </>)}<Icon
                                     name="delete"
                                     color="red"
                                     onClick={() => this.deleteTask(item._id)}
                                     />
-                                    <span onClick={() => this.deleteTask(item._id)} style={{paddingRight: 10}}>Delete</span>
+                                    <span onClick={() => this.deleteTask(item._id)} style={{paddingRight: 10, cursor: "pointer"}}>Delete</span>
                                 </Card.Meta>
                             </Card>
                         );
@@ -135,7 +139,7 @@ class ToDoList extends Component{
             <div>
                 <div className="row">
                     <Header className="header" as="h2" color="yellow">
-                        TO DO LIST
+                        TO-DO LIST
                     </Header>
                 </div>
                 <div className="row">
